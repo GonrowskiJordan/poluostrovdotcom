@@ -3,6 +3,7 @@
   <head>
     <!-- Site Title-->
     <title>Фото и Видео | Полуостров Им. Леонида Духовного</title>
+
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,76 +12,77 @@
     <meta name="image" property="og:image" content="http://poluostrov.com/images/gallery-preview.jpg">
     <meta name="robots" content="all">
     <meta name="googlebot" content="all">
-    <meta property="og:url"                content="https://poluostrov.com/gallery.html" />
+    <meta property="og:url"                content="gallery.html" />
     <meta property="og:type"               content="gallery" />
     <meta property="og:title"              content="Фото и Видео | Полуостров Им. Леонида Духовного" />
     <meta charset="utf-8">
-    <link rel="icon" href="/images//favicon.ico" type="image/x-icon">
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
     <!-- Stylesheets-->
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
   </head>
-  <script>
-  
-  const drive_preload = {
-    api_key: "AIzaSyCqC17-M7h5Bgr8BuEznkCrZ9RFFLyNWUI",
-    children_loaded: false,
-    self_loaded: false,
-    follow: function () {},
-    id: "",
-    parent: null,
-    self: {},
-    children: {},
-    fetchList: function() {
-      fetch("https://www.googleapis.com/drive/v3/files?key="+this.api_key+"&q=%27"+this.id+"%27%20in%20parents")
-      .then(response => response.json())
-      .then( data => this.setList(data))
-      .catch(function (err) { console.log(err);} );
-    },
-    setList: function(data) {
-      this.children = data.files;
-      this.children_loaded = true;
-      this.follow(this);
-      //this.maybeExecute();
-    },
-    fetchInfo: function() {
-      fetch("https://www.googleapis.com/drive/v3/files/"+this.id+"/?key="+this.api_key)
-      .then(response => response.json())
-      .then( data => this.setInfo(data))
-      .catch(function (err) { console.log(err);} );
-    },
-    setInfo(data) {
-      this.self = data;
-      this.self_loaded = true;
-    },
-    init(id,parent=null,follow=null) {
-      this.self_loaded = false;
-      this.children_loaded = false;
-      this.id = id;
-      if (parent) {
-        this.parent = parent;
+
+  <script>  
+    const drive_preload = {
+      api_key: "AIzaSyCqC17-M7h5Bgr8BuEznkCrZ9RFFLyNWUI",
+      children_loaded: false,
+      self_loaded: false,
+      follow: function () {},
+      id: "",
+      parent: null,
+      self: {},
+      children: {},
+      fetchList: function() {
+        fetch("https://www.googleapis.com/drive/v3/files?key="+this.api_key+"&q=%27"+this.id+"%27%20in%20parents")
+        .then(response => response.json())
+        .then( data => this.setList(data))
+        .catch(function (err) { console.log(err);} );
+      },
+      setList: function(data) {
+        this.children = data.files;
+        this.children_loaded = true;
+        this.follow(this);
+        //this.maybeExecute();
+      },
+      fetchInfo: function() {
+        fetch("https://www.googleapis.com/drive/v3/files/"+this.id+"/?key="+this.api_key)
+        .then(response => response.json())
+        .then( data => this.setInfo(data))
+        .catch(function (err) { console.log(err);} );
+      },
+      setInfo(data) {
+        this.self = data;
         this.self_loaded = true;
-        this.follow = follow;
-        for (var i=0; i<parent.children.length; i++) 
-          if (parent.children[i]["id"]==id)
-          {
-            this.self = parent.children[i];
-            break;
-          }
+      },
+      init(id,parent=null,follow=null) {
+        this.self_loaded = false;
+        this.children_loaded = false;
+        this.id = id;
+        if (parent) {
+          this.parent = parent;
+          this.self_loaded = true;
+          this.follow = follow;
+          for (var i=0; i<parent.children.length; i++) 
+            if (parent.children[i]["id"]==id)
+            {
+              this.self = parent.children[i];
+              break;
+            }
+        }
+        else {
+          this.parent = null;
+          this.fetchInfo();
+        }
+        this.fetchList();
       }
-      else {
-        this.parent = null;
-        this.fetchInfo();
-      }
-      this.fetchList();
-    }
-}
+  }
 
-drive_preload.init("1jEQDNpok5Xfj2xLEq0XjXlEXT3ATw9K7");
-
-
+    drive_preload.init("1jEQDNpok5Xfj2xLEq0XjXlEXT3ATw9K7");
   </script>
+
   <body>
     <!-- Page Loader-->
     <div id="page-loader">
@@ -222,7 +224,7 @@ drive_preload.init("1jEQDNpok5Xfj2xLEq0XjXlEXT3ATw9K7");
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
     <script src="js/core.min.js"></script>
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
     <script>
 
     function showMsg(msg,status) {

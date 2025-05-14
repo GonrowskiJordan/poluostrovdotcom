@@ -3,13 +3,15 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-CJCEGB29SR"></script>
   <script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-	  gtag('config', 'G-CJCEGB29SR');
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'G-CJCEGB29SR');
   </script>
   <head>
-  
     <!-- Site Title-->
     <title>КСП ПОЛУОСТРОВ имени Леонида Духовного</title>
     <meta name="format-detection" content="telephone=no">
@@ -19,27 +21,46 @@
     <meta name="description" property="og:description" content="Клуб Стихотворной Песни (КСП) Сан Франциско и окресностей Полуостров." />
     <meta name="author" content="Полуостров имени Леонида Духовного" />
     <meta name="image" property="og:image" content="https://poluostrov.com/images/preview-image-poluostrov.jpg">
-
     <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <!-- Stylesheets-->
     <!-- link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic%7CJosefin+Sans:400,700,300italic" -->
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/core.min.js"></script>
-    <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/core.min.js"></script>
+    <style>
+      .ie-panel {
+        display: none;
+        background: #212121;
+        padding: 10px 0;
+        box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, .3);
+        clear: both;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      html.ie-10 .ie-panel,
+      html.lt-ie-10 .ie-panel {
+        display: block;
+      }
+    </style>
   </head>
   <body>
-    <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <div class="ie-panel">
+      <a href="http://windows.microsoft.com/en-US/internet-explorer/">
+        <img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today.">
+      </a>
+    </div>
     <!-- Page Loader -->
     <div id="page-loader">
       <div class="page-loader-body">
         <div class="cssload-spinner">
-
-          <div id="no-javascript"><p class="text-center">
-              Please enable JavaScript to view this site</p>
-              <script>document.getElementById('no-javascript').parentNode.removeChild(document.getElementById('no-javascript'));</script>
+          <div id="no-javascript">
+            <p class="text-center"> Please enable JavaScript to view this site</p>
+            <script>
+              document.getElementById('no-javascript').parentNode.removeChild(document.getElementById('no-javascript'));
+            </script>
           </div>
-
         </div>
       </div>
     </div>
@@ -47,38 +68,79 @@
     <div class="page">
       <!-- Page header-->
       <header class="section page-header">
-      <div class="rd-navbar-wrap">
+        <div class="rd-navbar-wrap">
           <nav class="rd-navbar bg-yellow" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-stick-up-clone="false" data-md-stick-up-offset="5px" data-lg-stick-up-offset="5px" data-md-stick-up="true" data-lg-stick-up="true">
             <div class="rd-navbar-main-outer">
               <div class="rd-navbar-main">
                 <!-- RD Navbar Panel-->
                 <div class="rd-navbar-panel">
-                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                  <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap">
+                    <span></span>
+                  </button>
                   <!-- RD Navbar Brand-->
-                  <div class="rd-navbar-brand"><a class="brand" href="/index.html">
-                    <div class="brand__name"><img class="brand__logo-dark" src="/images/logo-default.png" alt=""/></div>
-                    <span class="brand__slogan text-uppercase">Полуостров<br><small>имени<br>Леонида&nbsp;Духовного</small></span></a>
-                    </div>
+                  <div class="rd-navbar-brand">
+                    <a class="brand" href="/index.html">
+                      <div class="brand__name">
+                        <img class="brand__logo-dark" src="/images/logo-default.png" alt="" />
+                      </div>
+                      <span class="brand__slogan text-uppercase">Полуостров <br>
+                        <small>имени <br>Леонида&nbsp;Духовного </small>
+                      </span>
+                    </a>
                   </div>
+                </div>
                 <!-- RD Navbar Nav-->
                 <div class="rd-navbar-nav-wrap">
                   <div class="rd-navbar-element">
                     <ul class="list-icons list-inline-sm">
-                      <li><a class="icon icon-sm fa fa-facebook icon-style-camera" href="https://www.facebook.com/groups/281683911878877"><span></span><span></span><span></span><span></span></a></li>
+                      <li>
+                        <a class="icon icon-sm fa fa-facebook icon-style-camera" href="https://www.facebook.com/groups/281683911878877">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </a>
+                      </li>
                     </ul>
                   </div>
                   <!-- RD Navbar Nav-->
                   <ul class="rd-navbar-nav">
-                    <li><a href="/award/">Премия 2025<span></span><span></span><span></span><span></span></a>
-
+                    <li>
+                      <a href="/award/">Премия 2025 <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </a>
                     </li>
-                    <li><a href="/story.html">История Клуба<span></span><span></span><span></span><span></span></a>
+                    <li>
+                      <a href="/story.html">История Клуба <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </a>
                     </li>
-                    <li><a href="/personalii.html">Персоналии<span></span><span></span><span></span><span></span></a>
+                    <li>
+                      <a href="/personalii.html">Персоналии <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </a>
                     </li>
-                    <li><a href="/gallery.html">Фото и видео<span></span><span></span><span></span><span></span></a>
+                    <li>
+                      <a href="/gallery.html">Фото и видео <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </a>
                     </li>
-                    <li><a class="menu-button" href="https://www.poluostrovfestival.org/?PID=1037">Купить билеты<br><small>на мероприятия</small><span></span><span></span><span></span><span></span></a>
+                    <li>
+                      <a class="menu-button" href="https://www.poluostrovfestival.org/?PID=1037">Купить билеты <br>
+                        <small>на мероприятия</small>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </a>
                     </li>
                   </ul>
                 </div>
@@ -87,98 +149,116 @@
           </nav>
         </div>
       </header>
-
-            <!-- First image block -->
-            <section class="section parallax-container h-95 bg-gray-darker" data-parallax-img="images/poluostrov-cover.jpg">
-              <div class="parallax-content">
-                  <div class="shell text-center">
-                    <div class="range range-middle">
-                      <div class="cell-xs-12 cell-md-12 wow fadeIn black-shadow">
-                        <div class="wow fadeInTop"><h1>КСП &ldquo;ПОЛУОСТРОВ&rdquo;</h1></div>
-                        <div class="wow fadeInTop"><h3>имени Леонида Духовного</h3></div>
-                      
-                    </div>
+      <!-- First image block -->
+      <section class="section parallax-container h-95 bg-gray-darker" data-parallax-img="images/poluostrov-cover.jpg">
+        <div class="parallax-content">
+          <div class="shell text-center">
+            <div class="range range-middle">
+              <div class="cell-xs-12 cell-md-12 wow fadeIn black-shadow">
+                <div class="wow fadeInTop">
+                  <h1>КСП &ldquo;ПОЛУОСТРОВ&rdquo;</h1>
+                </div>
+                <div class="wow fadeInTop">
+                  <h3>имени Леонида Духовного</h3>
                 </div>
               </div>
-              </div>
-            </section>
-
-
+            </div>
+          </div>
+        </div>
+      </section>
       <!-- video background block -->
       <section class="section bg-gray-darker text-center">
-      <!-- video -->
-      <div class="wow fadeIn video-block">
-            <video autoplay muted loop>
-                <!-- Render video --><source src="images/video-poluostrov.mp4" type="video/mp4">
-                <!-- Traffic video <source src="images/traffic.mp4" type="video/mp4"> -->
-              Your browser does not support the video tag.
-            </video>
-      </div>
-      <!-- no video -->
-      <!-- <div class="wow fadeIn video-block" style="min-height:70vh;"></div> -->
-      <!-- end -->
-    
+        <!-- video -->
+        <div class="wow fadeIn video-block">
+          <video autoplay muted loop>
+            <!-- Render video -->
+            <source src="images/video-poluostrov.mp4" type="video/mp4">
+            <!-- Traffic video <source src="images/traffic.mp4" type="video/mp4"> --> Your browser does not support the video tag.
+          </video>
+        </div>
+        <!-- no video -->
+        <!-- <div class="wow fadeIn video-block" style="min-height:70vh;"></div> -->
+        <!-- end -->
       </section>
-
-          <!-- Main block -->
-          <section class="section section-md bg-dark-gradient text-center">
-            <div class="shell">
-              <div class="range range-30 range-middle">
-
-                <div class="cell-xs-12 cell-sm-6 cell-md-6 wow fadeInLeftSmall" data-wow-delay=".15s">
-                    <article class="post-boxed bg-white box-width-2">
-                      <div class="post-boxed__main">
-                      <p class="heading-4 center-10 mb-1 mt-1">КСП&nbsp;&ldquo;Полуостров&rdquo; основан в&nbsp;1992&nbsp;году, в&nbsp;городе Пало Алто, Калифорния. "Полуостров" является старейшим действующим КСП в&nbsp;США и Северной Америке.</p>
-                      <p class="heading-4 center-10 mb-1 mt-1">КСП &ldquo;Полуостров&rdquo; проводит ежегодние Фестивали КСП в Калифорнии, являющиеся одними из самых больших слетов в мире.</p>
-                      <p class="heading-4 center-10 mb-1 mt-1">&ldquo;Полуостров&rdquo; объеденяет бардов, поэтов, писателей, музыкантов, художников и просто хороших людей.<br> </p>
-                      </div>
-                    </article>
+      <!-- Main block -->
+      <section class="section section-md bg-dark-gradient text-center">
+        <div class="shell">
+          <div class="range range-30 range-middle">
+            <div class="cell-xs-12 cell-sm-6 cell-md-6 wow fadeInLeftSmall" data-wow-delay=".15s">
+              <article class="post-boxed bg-white box-width-2">
+                <div class="post-boxed__main">
+                  <p class="heading-4 center-10 mb-1 mt-1">КСП&nbsp;&ldquo;Полуостров&rdquo; основан в&nbsp;1992&nbsp;году, в&nbsp;городе Пало Алто, Калифорния. "Полуостров" является старейшим действующим КСП в&nbsp;США и Северной Америке.</p>
+                  <p class="heading-4 center-10 mb-1 mt-1">КСП &ldquo;Полуостров&rdquo; проводит ежегодние Фестивали КСП в Калифорнии, являющиеся одними из самых больших слетов в мире.</p>
+                  <p class="heading-4 center-10 mb-1 mt-1">&ldquo;Полуостров&rdquo; объеденяет бардов, поэтов, писателей, музыкантов, художников и просто хороших людей. <br>
+                  </p>
                 </div>
-
-                <div class="cell-xs-12 cell-sm-6 cell-md-6 wow fadeInRightSmall" data-wow-delay=".15s">
-                  <div class="wow fadeInBottom text-center center-auto"><img src="images/photo-cutout.png" style="max-height: 55vh;"></div>
-                </div>
-
-              </div>  
+              </article>
             </div>
-          </section>
-
-
-       <!-- Second blue image block -->
-       <section class="section bg-gray-darker">
-         <div class="parallax-content">
-              <div class="shell">
-               <div class="range range-middle">
-                <div class="cell-xs-12 cell-sm-6 text-center bg-gray-darker wow fadeInLeft">
-                  <img src="images/blue-road-1.jpg" class="mt-5 mb-5" style="border-radius: 10px;">
-                </div>
-                 <div class="cell-xs-12 cell-sm-6 wow fadeInRight">
-                  <div class="box-width-4 box-centered box-line">
-                    <span></span><span></span><span></span><span></span>
-                   <div class="">
+            <div class="cell-xs-12 cell-sm-6 cell-md-6 wow fadeInRightSmall" data-wow-delay=".15s">
+              <div class="wow fadeInBottom text-center center-auto">
+                <img src="images/photo-cutout.png" style="max-height: 55vh;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Second blue image block -->
+      <section class="section bg-gray-darker">
+        <div class="parallax-content">
+          <div class="shell">
+            <div class="range range-middle">
+              <div class="cell-xs-12 cell-sm-6 text-center bg-gray-darker wow fadeInLeft">
+                <img src="images/blue-road-1.jpg" class="mt-5 mb-5" style="border-radius: 10px;">
+              </div>
+              <div class="cell-xs-12 cell-sm-6 wow fadeInRight">
+                <div class="box-width-4 box-centered box-line">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <div class="">
                     <h2 class="mb-0 mt-1">Президент клуба:</h2>
                     <h1 class="mb-5 mt-1">Григорий Котляр</h1>
                   </div>
                 </div>
-               </div>
-           </div>
-         </div>
-       </section>
-
+              </div>
+            </div>
+          </div>
+      </section>
       <!-- Page Footer-->
       <footer class="footer-centered section bg-gray-darker">
         <div class="shell">
           <div class="range range-sm-center">
             <div class="cell-sm-10 cell-md-8 cell-lg-6">
-              <!-- Brand--><a class="brand" href="index.html">
-                <div class="brand__name" style="overflow: unset; height: auto;"><img src="/images/logo-inverse.png" alt="" style="height:200px;"/>
+              <!-- Brand-->
+              <a class="brand" href="index.html">
+                <div class="brand__name" style="overflow: unset; height: auto;">
+                  <img src="/images/logo-inverse.png" alt="" style="height:200px;" />
                 </div>
                 <ul class="list-icons list-inline-sm">
-                  <li><a class="icon icon-sm fa fa-facebook icon-style-camera" href="https://www.facebook.com/groups/281683911878877"><span></span><span></span><span></span><span></span></a></li>
-                  <li><a class="icon icon-sm fa fa-festival icon-style-camera" href="https://poluostrovfestival.org">PoluostrovFestival.org<span></span><span></span><span></span><span></span></a></li>
+                  <li>
+                    <a class="icon icon-sm fa fa-facebook icon-style-camera" href="https://www.facebook.com/groups/281683911878877">
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </a>
+                  </li>
+                  <li>
+                    <a class="icon icon-sm fa fa-festival icon-style-camera" href="https://poluostrovfestival.org">PoluostrovFestival.org <span></span>
+                      <span></span>
+                      <span></span>
+                      <span></span>
+                    </a>
+                  </li>
                 </ul>
-              <!-- Rights-->
-              <p class="rights"><span>КСП Полуостров</span><span>&nbsp;&copy;&nbsp; </span><span class="copyright-year"></span>.&nbsp; <br class="veil-xs"></span></p>
+                <!-- Rights-->
+                <p class="rights">
+                  <span>КСП Полуостров</span>
+                  <span>&nbsp;&copy;&nbsp; </span>
+                  <span class="copyright-year"></span>.&nbsp; <br class="veil-xs">
+                  </span>
+                </p>
             </div>
           </div>
         </div>
@@ -187,7 +267,7 @@
     <!-- Global Mailform Output-->
     <div class="snackbars" id="form-output-global"></div>
     <!-- Javascript-->
-    <script src="/js/script.js"></script>
+    <script src="js/script.js"></script>
     <!-- coded by Himic-->
   </body>
 </html>
