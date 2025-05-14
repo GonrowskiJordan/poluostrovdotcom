@@ -867,7 +867,6 @@ const genRanHex = size => [...Array(size)].map(() => Math.floor(Math.random() * 
 							formdata["show"] = 0;
 							formdata["name"] = formdata["name"].replace(/"/g,"");
 							updateSheets(formdata,"nomination");
-
 						} else {
 							return false;
 						}
@@ -1024,14 +1023,13 @@ function collectData()
 	return formdata;
 }
 
-function updateSheets(formdata,sheet) {
-	if (sheet=="nomination") var g_url = "https://script.google.com/macros/s/AKfycbwc_-qjFRQ4-JG6OrKnuSnXo1nGWyTstgWOT-DVfnNaHpXXjlrwKmva76NTSnSF1wsD/exec";
-	if (sheet=="rate") var g_url = "https://script.google.com/macros/s/AKfycbwjTGIC5rE8pZZnCn-0OemtQWHNRSfz2TIT5BjaWx6VKhjXzUu09lpWzbF_ujVi5zjA/exec"
-	if (sheet=='like') var g_url = "https://script.google.com/macros/s/AKfycbxYjxAxPKnV7GkhZLyE2xMQwT91YadVUUah1DPuqvOsZZ3A_rIwqREbpx9ojed48WwhbQ/exec";
-
+function updateSheets(formdata, sheet) {
+	if (sheet=="nomination") formdata['url'] = "https://script.google.com/macros/s/AKfycbzy5j2T6y_7HshgFwEw2ITaOATthfVMs5KrtUC1m2rpiMWHSy6dkK6HFtsWV0OXpDkP/exec";
+	if (sheet=="rate") formdata['url'] = "https://script.google.com/macros/s/AKfycbwjTGIC5rE8pZZnCn-0OemtQWHNRSfz2TIT5BjaWx6VKhjXzUu09lpWzbF_ujVi5zjA/exec"
+	if (sheet=='like') formdata['url'] = "https://script.google.com/macros/s/AKfycbxYjxAxPKnV7GkhZLyE2xMQwT91YadVUUah1DPuqvOsZZ3A_rIwqREbpx9ojed48WwhbQ/exec";
+	
 	var xhr = $.ajax({
-		url: g_url,
-		method: "GET",
+		url: 'https://api.ip.lk/poluostrov/',
 		type: "GET",
 		dataType: "json",
 		data: formdata
