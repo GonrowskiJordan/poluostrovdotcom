@@ -1024,7 +1024,7 @@ function collectData()
 }
 
 function updateSheets(formdata, sheet) {
-	if (sheet=="nomination") formdata['url'] = "https://script.google.com/macros/s/AKfycbzy5j2T6y_7HshgFwEw2ITaOATthfVMs5KrtUC1m2rpiMWHSy6dkK6HFtsWV0OXpDkP/exec";
+	if (sheet=="nomination") formdata['url'] = "https://script.google.com/macros/s/AKfycbz4S9LN9Zq_dauYkAXj3HtIRwMFnsWf8lr59td7NJNEH_qY9GLb3n7kpYOfrT8rKJxE/exec";
 	if (sheet=="rate") formdata['url'] = "https://script.google.com/macros/s/AKfycbwjTGIC5rE8pZZnCn-0OemtQWHNRSfz2TIT5BjaWx6VKhjXzUu09lpWzbF_ujVi5zjA/exec"
 	if (sheet=='like') formdata['url'] = "https://script.google.com/macros/s/AKfycbxYjxAxPKnV7GkhZLyE2xMQwT91YadVUUah1DPuqvOsZZ3A_rIwqREbpx9ojed48WwhbQ/exec";
 	

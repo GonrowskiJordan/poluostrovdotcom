@@ -1,7 +1,3 @@
-// function doGet(e){
-    //   return handleResponse(e);
-// }
-
 // Usage
 //  1. Enter sheet name where data is to be written below
 var SHEET_NAME = "nominations";
@@ -20,25 +16,16 @@ var SCRIPT_PROP = PropertiesService.getScriptProperties(); // new property servi
 
 // If you don't want to expose either GET or POST methods you can comment out the appropriate function
 
-
-// function doPost(e){
-//   return handleResponse(e);
-// }
-
-// function doOptions(e) {
-//   return ContentService.createTextOutput("")
-//     .setMimeType(ContentService.MimeType.TEXT)
-//     .setHeader("Access-Control-Allow-Origin", "*")
-//     .setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-//     .setHeader("Access-Control-Allow-Headers", "Content-Type");
-// }
-
 function doPost(e) {
   Logger.log("JD: In doPost");
   Logger.log("JD: e: " + JSON.stringify(e));
   const json = handleResponse(e);
   return ContentService.createTextOutput(json)
-      .setMimeType(ContentService.MimeType.JSON);
+    .setMimeType(ContentService.MimeType.JSON);
+//     .setMimeType(ContentService.MimeType.TEXT)
+//     .setHeader("Access-Control-Allow-Origin", "*")
+//     .setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+//     .setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
 function doGet(e) {
@@ -46,7 +33,7 @@ function doGet(e) {
   Logger.log("JD: e: " + JSON.stringify(e));
   const json = handleResponse(e);
   return ContentService.createTextOutput(json)
-      .setMimeType(ContentService.MimeType.JSON);
+    .setMimeType(ContentService.MimeType.JSON);
 }
 
 function handleResponse(e) {
@@ -67,7 +54,7 @@ function handleResponse(e) {
     // we'll assume header is in row 1 but you can override with header_row in GET/POST data
     var headRow = e.parameter.header_row || 1;
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
-    var nextRow = sheet.getLastRow()+1; // get next row
+    var nextRow = sheet.getLastRow() + 1; // get next row
     var row = []; 
     // loop through the header columns
     for (i in headers) {
