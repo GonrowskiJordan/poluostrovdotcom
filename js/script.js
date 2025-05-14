@@ -1029,7 +1029,7 @@ function updateSheets(formdata, sheet) {
 	if (sheet=='like') formdata['url'] = "https://script.google.com/macros/s/AKfycbxYjxAxPKnV7GkhZLyE2xMQwT91YadVUUah1DPuqvOsZZ3A_rIwqREbpx9ojed48WwhbQ/exec";
 	
 	var xhr = $.ajax({
-		url: 'https://api.ip.lk/poluostrov/',
+		url: 'https://api.ip.lk/poluostrov.php/',
 		type: "GET",
 		dataType: "json",
 		data: formdata
