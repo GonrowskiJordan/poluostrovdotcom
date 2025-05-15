@@ -20,20 +20,14 @@ function doPost(e) {
   Logger.log("JD: In doPost");
   Logger.log("JD: e: " + JSON.stringify(e));
   const json = handleResponse(e);
-  return ContentService.createTextOutput(json)
-    .setMimeType(ContentService.MimeType.JSON);
-//     .setMimeType(ContentService.MimeType.TEXT)
-//     .setHeader("Access-Control-Allow-Origin", "*")
-//     .setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-//     .setHeader("Access-Control-Allow-Headers", "Content-Type");
+  return createCorsResponse(json);
 }
 
 function doGet(e) {
   Logger.log("JD: In doGet");
   Logger.log("JD: e: " + JSON.stringify(e));
   const json = handleResponse(e);
-  return ContentService.createTextOutput(json)
-    .setMimeType(ContentService.MimeType.JSON);
+  return createCorsResponse(json);
 }
 
 function handleResponse(e) {
@@ -55,8 +49,9 @@ function handleResponse(e) {
     var headRow = e.parameter.header_row || 1;
     var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
     var nextRow = sheet.getLastRow() + 1; // get next row
-    var row = []; 
+    var row = [];
     // loop through the header columns
+    var debug_log = '';
     for (i in headers) {
       if (headers[i] == "Timestamp") {
         // special case if you include a 'Timestamp' column
@@ -75,6 +70,14 @@ function handleResponse(e) {
   } finally { //release lock
     lock.releaseLock();
   }
+}
+
+function createCorsResponse(content) {
+  return ContentService.createTextOutput(content)
+    .setMimeType(ContentService.MimeType.JSON)
+    .setHeader("Access-Control-Allow-Origin", "*")
+    .setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+    .setHeader("Access-Control-Allow-Headers", "Content-Type");
 }
 
 function setup() {
