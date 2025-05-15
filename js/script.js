@@ -1028,35 +1028,33 @@ function updateSheets(formdata, sheet) {
 	if (sheet == "rate") var g_url = "https://script.google.com/macros/s/AKfycbwjTGIC5rE8pZZnCn-0OemtQWHNRSfz2TIT5BjaWx6VKhjXzUu09lpWzbF_ujVi5zjA/exec"
 	if (sheet == 'like') var g_url = "https://script.google.com/macros/s/AKfycbxYjxAxPKnV7GkhZLyE2xMQwT91YadVUUah1DPuqvOsZZ3A_rIwqREbpx9ojed48WwhbQ/exec";
 	
-	var xhr = $.ajax({
-		url: g_url,
-		type: "GET",
-		dataType: "json",
-		data: formdata
-	}).success(
-		function () { 
-			if (sheet == "nomination") formClear(true,"Песня успешно номинирована!"); 
-			if (sheet == "rate") {
-				formClear(true,"Ваш голос учтен!");
-				setCookie(formdata['id'], formdata['stars'], 365);
-				votes_by_id[formdata['id']]['votes']++;
-				votes_by_id[formdata['id']]['total'] = votes_by_id[formdata['id']]['total'] + parseInt(formdata['stars']);
-				$(".post-boxed__stars[rate-id='"+formdata['id']+"']").attr("class",("post-boxed__stars voted "+getRating(formdata['id'])));
+	fetch(g_url, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		body: formdata
+	}).then(response => response.json())
+	.then(data => {
+		if (sheet == "nomination") formClear(true,"Песня успешно номинирована!"); 
+		if (sheet == "rate") {
+			formClear(true,"Ваш голос учтен!");
+			setCookie(formdata['id'], formdata['stars'], 365);
+			votes_by_id[formdata['id']]['votes']++;
+			votes_by_id[formdata['id']]['total'] = votes_by_id[formdata['id']]['total'] + parseInt(formdata['stars']);
+			$(".post-boxed__stars[rate-id='"+formdata['id']+"']").attr("class",("post-boxed__stars voted "+getRating(formdata['id'])));
 
-			}
-			if (sheet=="like") {
-				showMsg("Лайк отправлен!","success");
-				setCookie(formdata['id'],true,365);
-				likes_by_id[formdata['id']]++;
-			}
 		}
-	).error (
-		function (xhr) { 
+		if (sheet=="like") {
+			showMsg("Лайк отправлен!","success");
+			setCookie(formdata['id'],true,365);
+			likes_by_id[formdata['id']]++;
+		}
+	}).catch(error => {
 			if (sheet=="nomination") formClear(false,"Не удалось добавить данные",true,false); 
 			if (sheet=="rate") formClear("Перезагрузите страницу и попробуйте еще раз!",false); 
 			if (sheet=="like") showMsg("Перезагрузите страницу и попробуйте еще раз!","error");
-		}
-	);
+	});
 }
 
 
