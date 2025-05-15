@@ -1024,7 +1024,7 @@ function collectData()
 }
 
 function updateSheets(formdata, sheet) {
-	if (sheet=="nomination") formdata['url'] = "https://script.google.com/macros/s/AKfycbz4S9LN9Zq_dauYkAXj3HtIRwMFnsWf8lr59td7NJNEH_qY9GLb3n7kpYOfrT8rKJxE/exec";
+	if (sheet=="nomination") formdata['url'] = "https://script.google.com/macros/s/AKfycbxVv3Xofr3fW4kVYHZJ8yibvy7A8x_seiiy4FikZCiuwFk-rHQqcn4GZPhRmBC59eKY/exec";
 	if (sheet=="rate") formdata['url'] = "https://script.google.com/macros/s/AKfycbwjTGIC5rE8pZZnCn-0OemtQWHNRSfz2TIT5BjaWx6VKhjXzUu09lpWzbF_ujVi5zjA/exec"
 	if (sheet=='like') formdata['url'] = "https://script.google.com/macros/s/AKfycbxYjxAxPKnV7GkhZLyE2xMQwT91YadVUUah1DPuqvOsZZ3A_rIwqREbpx9ojed48WwhbQ/exec";
 	
@@ -1098,9 +1098,9 @@ function readSheets(sheet_url, success_function, target_table) {
 			var sheet_data = data.split(/\r?\n|\r/);
 			var keys = sheet_data[0].split('\t');
 			var show_id = -1;
-			for (var i=0; i<keys.length; i++) if (keys[i]=='show') { show_id = i; break; }
+			for (var i = 0; i < keys.length; i++) if (keys[i]=='show') { show_id = i; break; }
 			var new_data = [];
-			for(var i = 1; i<sheet_data.length; i++)
+			for (var i = 1; i < sheet_data.length; i++)
     		{
 				var tmp = sheet_data[i].split('\t');
 				if (tmp[show_id]=="1")
@@ -1112,7 +1112,7 @@ function readSheets(sheet_url, success_function, target_table) {
 					new_data.push(sheet_data[i]);
 				}
 			}
-			success_function(new_data,target_table);
+			success_function(new_data, target_table);
 		}
 	).error (
 		function (xhr) { return false; }
@@ -1165,7 +1165,7 @@ function processNominations(data,target_table) {
 	var row = target_table.find("tr");
 	row = row.eq(row.length-1);
 	var n = row.length-1;
-	for (var i=data.length-1; i>=0; i--) {
+	for (var i = data.length - 1; i >= 0; i--) {
 		row.find(".cell-name").eq(0).text(data[i]["name"].trim());
 		var author = (data[i]["music"]==data[i]["lyrics"]) ? data[i]["music"] : data[i]["music"] + "&nbsp;/ " + data[i]["lyrics"];
  		row.find(".cell-author").eq(0).html(author);
