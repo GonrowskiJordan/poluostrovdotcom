@@ -1033,44 +1033,41 @@ function updateSheets(formdata, sheet) {
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded'
 		},
-		body: formdata
-	}).then(response => response.json())
+		body: new URLSearchParams(formdata)
+	})
+	.then(response => response.json())
 	.then(data => {
 		if (sheet == "nomination") formClear(true,"Песня успешно номинирована!"); 
 		if (sheet == "rate") {
-			formClear(true,"Ваш голос учтен!");
+			formClear(true, "Ваш голос учтен!");
 			setCookie(formdata['id'], formdata['stars'], 365);
 			votes_by_id[formdata['id']]['votes']++;
 			votes_by_id[formdata['id']]['total'] = votes_by_id[formdata['id']]['total'] + parseInt(formdata['stars']);
-			$(".post-boxed__stars[rate-id='"+formdata['id']+"']").attr("class",("post-boxed__stars voted "+getRating(formdata['id'])));
-
+			$(".post-boxed__stars[rate-id='" + formdata['id'] + "']").attr("class", ("post-boxed__stars voted " +getRating(formdata['id'])));
 		}
 		if (sheet=="like") {
-			showMsg("Лайк отправлен!","success");
-			setCookie(formdata['id'],true,365);
+			showMsg("Лайк отправлен!", "success");
+			setCookie(formdata['id'], true, 365);
 			likes_by_id[formdata['id']]++;
 		}
 	}).catch(error => {
-			if (sheet=="nomination") formClear(false,"Не удалось добавить данные",true,false); 
-			if (sheet=="rate") formClear("Перезагрузите страницу и попробуйте еще раз!",false); 
-			if (sheet=="like") showMsg("Перезагрузите страницу и попробуйте еще раз!","error");
+		if (sheet == "nomination") formClear(false, "Не удалось добавить данные", true, false); 
+		if (sheet == "rate") formClear("Перезагрузите страницу и попробуйте еще раз!", false); 
+		if (sheet == "like") showMsg("Перезагрузите страницу и попробуйте еще раз!", "error");
 	});
 }
 
-
-function formClear(status,success_message,required=true,reset=true) {
+function formClear(status, success_message, required=true, reset=true) {
 	var form = $(".rd-mailform"),
 	output = $("#" + form.attr("data-form-output"));
 
-	if (status==required) {
+	if (status == required) {
 		var cls = "success", msg = success_message, icon = "mdi-check";
 	} else {
 		var cls = "error", msg = "Ошибка: "+String(status), icon = "mdi-alert-outline";
 	}
 
-	form
-	.addClass(cls)
-	.removeClass('form-in-process');
+	form.addClass(cls).removeClass('form-in-process');
 
 	if (reset) form.trigger('reset');
 
@@ -1092,7 +1089,7 @@ function readSheets(sheet_url, success_function, target_table) {
 		url: sheet_url,
 		dataType: "text"
 	}).success(
-		  function (data) {
+		function (data) {
 			var sheet_data = data.split(/\r?\n|\r/);
 			var keys = sheet_data[0].split('\t');
 			var show_id = -1;
